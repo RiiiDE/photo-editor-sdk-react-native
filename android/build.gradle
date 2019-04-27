@@ -1,6 +1,5 @@
 buildscript {
 
-    ext.kotlin_version = '1.2.71'
     ext.pesdk_version = '6.4.0' // Insert the latest SDK version here. You will find it here https://github.com/imgly/pesdk-android-demo/releases
 
     repositories {
@@ -12,7 +11,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "com.facebook.react:react-native:+"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "ly.img.android.pesdk:plugin:$pesdk_version"
     }
 }
