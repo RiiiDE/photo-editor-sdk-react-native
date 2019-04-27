@@ -8,7 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "com.facebook.react:react-native:+"
-        classpath 'ly.img.android:photo-editor-sdk:6.3.0'
+        classpath 'ly.img.android.pesdk:plugin:6.3.0'
     }
 }
 
