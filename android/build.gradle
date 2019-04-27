@@ -1,8 +1,9 @@
 buildscript {
     repositories {
-        google()
         jcenter()
+        google()
         maven { url 'https://artifactory.img.ly/artifactory/imgly' }
+        maven { url 'https://artifactory.9elements.com/artifactory/imgly' }
     }
 
     dependencies {
