@@ -1,10 +1,11 @@
 buildscript {
     repositories {
         jcenter()
+        maven { url 'https://artifactory.img.ly/artifactory/imgly' }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.3.0'
     }
 }
 
@@ -12,23 +13,18 @@ apply plugin: 'com.android.library'
 
 dependencies {
     compile "com.facebook.react:react-native:+"
-    compile 'ly.img.android:photo-editor-sdk:5.0.8'
+    compile 'ly.img.android:photo-editor-sdk:6.3.0'
 }
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
