@@ -1,23 +1,17 @@
 buildscript {
 
-    ext.pesdk_version = '6.4.0' // Insert the latest SDK version here. You will find it here https://github.com/imgly/pesdk-android-demo/releases
-
     repositories {
         jcenter()
         google()
-        maven { url 'https://artifactory.img.ly/artifactory/imgly' }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "com.facebook.react:react-native:+"
-        classpath "ly.img.android.pesdk:plugin:$pesdk_version"
     }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'ly.img.android.pesdk'
 
 // Configure the PESDKPlugin
