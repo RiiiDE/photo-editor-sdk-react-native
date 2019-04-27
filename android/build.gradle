@@ -1,4 +1,8 @@
 buildscript {
+
+    ext.kotlin_version = '1.2.71'
+    ext.pesdk_version = '6.4.0' // Insert the latest SDK version here. You will find it here https://github.com/imgly/pesdk-android-demo/releases
+
     repositories {
         jcenter()
         google()
@@ -8,12 +12,13 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "com.facebook.react:react-native:+"
-        classpath 'ly.img.android.pesdk:plugin:6.4.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "ly.img.android.pesdk:plugin:$pesdk_version"
     }
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'ly.img.android.pesdk'
+apply plugin: PESDKPlugin
 
 // Configure the PESDKPlugin
 pesdkConfig {
@@ -38,7 +43,6 @@ pesdkConfig {
         include 'ly.img.android.pesdk.operation:sticker'
         include 'ly.img.android.pesdk.operation:overlay'
         include 'ly.img.android.pesdk.operation:adjustment'
-        include 'ly.img.android.pesdk.operation:text-design'
         include 'ly.img.android.pesdk.operation:abstract-sticker'
 
         // Add all the UI modules you are need
@@ -53,8 +57,6 @@ pesdkConfig {
         include 'ly.img.android.pesdk.ui.mobile_ui:overlay'
         include 'ly.img.android.pesdk.ui.mobile_ui:transform'
         include 'ly.img.android.pesdk.ui.mobile_ui:adjustment'
-        include 'ly.img.android.pesdk.ui.mobile_ui:text-design'
-
 
         // Add the serializer if you need
         include 'ly.img.android.pesdk:serializer'
@@ -86,5 +88,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
 
